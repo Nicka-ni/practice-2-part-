@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Students</title>
+    <title>Kurs</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="main.js" defer></script>
 </head>
 <body>
-    <div id="app">
+	<div id="app">
 		<input type="text" name="search" value="" v-model="search"><br>
 		<table class="table table-dark">
 			<tr v-for="item in students"  v-bind:key="item._id"> 
@@ -25,6 +25,17 @@
 			</select>
 			<button @click="addStudent()">Add student</button>
 
+	</div>
+<hr>
+    <div id="app2">
+		<h3>Enter sum</h3>
+		<input v-model = "currency"> <br>
+		<br><span>from</span>
+		<select v-model = "Val"> <option v-for="item in conver" :value="item.buy">{{item.ccy}}</option> <select>
+		<span>in</span>
+		<select v-model = "ValConvert"><option v-for="item in conver" :value="item.buy">{{item.ccy}}</option></select><br><br>
+			<button v-on:click="Calc()">Converting</button><br><br>
+			<h3 v-if="converted">{{res}}</h3>
 	</div>
 
 

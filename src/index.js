@@ -55,3 +55,29 @@ new Vue({
      },
   
  });
+
+var students = [
+]
+
+new Vue({
+     el: '#app2',
+     data: {
+         conver: [],
+         currency:1,
+         res:'',
+         converted: true,
+         Val:'',
+         ValConvert:''
+     },	 
+     mounted: function(){
+         axios.get("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5").then((response) => 
+         {console.log(response.data);
+         this.conver = response.data;})
+     },
+     methods: {
+       Calc: function(){
+           this.res = this.Val / this.ValConvert * this.currency
+        }
+     },
+  
+ });
