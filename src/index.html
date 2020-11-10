@@ -31,9 +31,9 @@
 		<h3>Enter sum</h3>
 		<input v-model = "currency"> <br>
 		<br><span>from</span>
-		<select v-model = "Val"> <option v-for="item in conver" :value="item.buy">{{item.ccy}}</option> <select>
+		<select v-model = "currency1"> <option v-for="item in conver" :value="item.buy">{{item.ccy}}</option> <select>
 		<span>in</span>
-		<select v-model = "ValConvert"><option v-for="item in conver" :value="item.buy">{{item.ccy}}</option></select><br><br>
+		<select v-model = "currency2"><option v-for="item in conver" :value="item.buy">{{item.ccy}}</option></select><br><br>
 			<button v-on:click="Calc()">Converting</button><br><br>
 			<h3 v-if="converted">{{res}}</h3>
 	</div>

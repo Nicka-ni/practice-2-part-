@@ -64,10 +64,10 @@ new Vue({
      data: {
          conver: [],
          currency:1,
+         currency2:'',
          res:'',
          converted: true,
-         Val:'',
-         ValConvert:''
+         Val:''
      },	 
      mounted: function(){
          axios.get("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5").then((response) => 
@@ -76,7 +76,7 @@ new Vue({
      },
      methods: {
        Calc: function(){
-           this.res = this.Val / this.ValConvert * this.currency
+           this.res = this.currency1 / this.currency2 * this.currency
         }
      },
   
